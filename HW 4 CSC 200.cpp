@@ -4,8 +4,10 @@
 using namespace std;
 
 
-int baseToDecimal(string num, int base);
+int baseToDecimalNonClassWay(string num, int base);
 int returnIndex(char c);
+int doExponent(int num, int times);
+int baseToDecimalClassWay(string num, int base);
 
 int main()
 {
@@ -15,11 +17,14 @@ int main()
     cin >> num;
     cout << "Please enter your base: ";
     cin >> base;
-    cout << "\n" << "the answer is: " << baseToDecimal(num, base);
+    
+    cout << "\n" << "the answer is: " << baseToDecimalNonClassWay(num, base) << endl;
+    cout << "the second way's answer is: " << baseToDecimalClassWay(num, base);
+    
 }
 
 
-int baseToDecimal(string num, int base) 
+int baseToDecimalNonClassWay(string num, int base) 
 {
     
     int answer = 0;
@@ -29,7 +34,7 @@ int baseToDecimal(string num, int base)
     }
     
     return answer;
-
+    
 }
 
 int returnIndex(char c) 
@@ -44,3 +49,27 @@ int returnIndex(char c)
     return -1;
 }
 
+
+int baseToDecimalClassWay(string num, int base)
+{
+    int answer = 0;
+    for (int i = num.length() - 1; i >= 0; i--)
+    {
+        answer += (doExponent(base, num.length() - 1 - i) * returnIndex(num[i]));
+    }
+    return answer;
+}
+
+int doExponent(int num, int times)
+{
+    int answer = 1;
+    
+    for (int i = 0; i < times; i++)
+    {
+        answer = num * answer;
+        
+    }
+    
+    return answer;
+
+}
