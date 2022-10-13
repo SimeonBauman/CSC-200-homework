@@ -11,7 +11,7 @@ int main()
     cout << "Please enter the word you would like encoded: ";
     string input = "";
     cin >> input;
-    cout << rot13("hello");
+    cout << rot13(input);
 }
 
 string rot13(string source)
