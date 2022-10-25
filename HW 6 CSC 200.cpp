@@ -36,7 +36,8 @@ int main()
 			}
 			turn = 1;
 		}
-		else {
+		else 
+		{
 
 			cout << "Player 2's turn" << endl;
 
