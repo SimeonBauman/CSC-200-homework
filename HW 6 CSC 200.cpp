@@ -58,10 +58,12 @@ int main()
 
 	if (Hp1 > 0) 
 	{
+		cout << "Player 1 Won!" << endl;
 		cout << "Player 2 lost";
 	}
 	else
 	{
+		cout << "Player 2 Won!" << endl;
 		cout << "Player 1 lost";
 	}
     
